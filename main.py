@@ -17,13 +17,10 @@ import dados
 
 # dados para serem tratados
 
-dadosComoJson = dados.getDados()
-
-
 ############################################################
 # Chamada das funções para a geração dos gráficos
 ############################################################
 
-# barras.ApresentarGraficoDeBarras(dados)
-linha.ApresentarGraficoDeLinha(dados.ordenarDadosComoDicionario(dadosComoJson))
+barras.ApresentarGraficoDeBarras(dados.ordenarDadosPorMes())
+linha.ApresentarGraficoDeLinha(dados.ordenarDadosComoTuplas())
 # boxplot.ApresentarGraficoBoxplot(dados)

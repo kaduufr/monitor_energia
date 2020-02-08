@@ -1,18 +1,20 @@
 # Bibliotecas do Sistema
 import matplotlib.pyplot as plt
-import random  # Excluir essa biblioteca para a execução do projeto
 
+################################################
+# Mostra o total de energia gerada em cada mês (kwh) de um certo ano. Para isso
+# será preciso fazer o somatório do total de energia gerada em cada dia do mês
+# correspondente a cada barra do gráfico 
 
-#Geração de dados aleatórios para preencher os eixos x e y dos gráficos
 def FiltrarEntrada(dados):
+  
   y = []
+  x = []
+  
+  for dadoDoMes in dados:
+    x.append(dadoDoMes[0])
+    y.append(dadoDoMes[1])
 
-  # Dados gerados aleatoriamente
-  for i in range(5):
-    y.append(int (random.random() * 10))
-  
-  x = ["A", "B", "C", "D", "E" ]
-  
   # Retorno da função com os dados preenchidos com os eixos x e y
   return (x, y)
 
@@ -20,8 +22,8 @@ def FiltrarEntrada(dados):
 def GerarGrafico(x, y):
   plt.bar(x, y)
   plt.title('SEU TÍTULO')
-  plt.xlabel('NOME DO EIXO X')
-  plt.ylabel('NOME DO EIXO Y')
+  plt.xlabel('Meses')
+  plt.ylabel('Energia Total')
   plt.savefig('barras.png')
   plt.close()
 

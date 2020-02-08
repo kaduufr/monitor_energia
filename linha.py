@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def FiltrarEntrada(dados):
   x = []
   y = []
-
+  #tirar duvida com galileu porque como tem 365 de dados, as datas nao esta aparecendo
   for i in dados:
     x.append(i[0])
     y.append(i[1])
@@ -17,9 +17,9 @@ def FiltrarEntrada(dados):
 # Função de geração de gráfico usando a biblioteca matplotlib 
 def GerarGrafico(x, y):
   plt.plot(x, y)
-  plt.title('SEU TÍTULO')
-  plt.xlabel('NOME DO EIXO X')
-  plt.ylabel('NOME DO EIXO Y')
+  plt.title('Grafico de energia/dia durante o ano')
+  plt.xlabel('Dia')
+  plt.ylabel('Energia')
   plt.savefig('linha.png')
   plt.close()
 
