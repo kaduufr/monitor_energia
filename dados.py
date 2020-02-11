@@ -58,3 +58,46 @@ def ordenarDadosPorMes():
     
     return listaDeDadosPorMes
     
+############################################################
+# funções para o grafico boxplot
+############################################################
+
+def getDadosPorEstacao():
+
+    dadosOrdenados = ordenarDadosComoTuplas()
+
+    estacoes = [
+        {
+            'nomeEstacao': 'Outuno',
+            'dataInicio': '2019-03-20',
+            'dataFim' : '2019-07-20',
+            'energiaGastaNaEstacao': []
+        },
+        {
+            'nomeEstacao': 'Inverno',
+            'dataInicio': '2019-07-21',
+            'dataFim' : '2019-09-22',
+            'energiaGastaNaEstacao': []
+        },
+        {
+            'nomeEstacao': 'Primavera',
+            'dataInicio': '2019-09-23',
+            'dataFim' : '2019-12-21',
+            'energiaGastaNaEstacao': []
+        },
+        {
+            'nomeEstacao': 'Verão',
+            'dataInicio': '2019-12-22',
+            'dataFim' : '2019-03-19',
+            'energiaGastaNaEstacao': []
+        },
+    ]
+
+    for dado in dadosOrdenados:
+        for estacao in estacoes:
+            if estacao['dataInicio'] <= dado[0] and estacao['dataFim'] >= dado[0]:
+                estacao['energiaGastaNaEstacao'].append(dado[1])
+            elif estacao['dataFim'] >= dado[0]:
+                estacao['energiaGastaNaEstacao'].append(dado[1])                
+
+    return estacoes

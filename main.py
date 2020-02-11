@@ -2,9 +2,8 @@
 ############################################################
 # Dados da Equipe
 ############################################################
-# Nome do Aluno 1
-# Nome do Aluno 2
-# Turma
+# Carlos Eduardo
+# Rafael
 # Graficos sorteados: 
 # 3 2 3
 ############################################################
@@ -23,4 +22,4 @@ import dados
 
 barras.ApresentarGraficoDeBarras(dados.ordenarDadosPorMes())
 linha.ApresentarGraficoDeLinha(dados.ordenarDadosComoTuplas())
-# boxplot.ApresentarGraficoBoxplot(dados)
+boxplot.ApresentarGraficoBoxplot(dados.getDadosPorEstacao())
